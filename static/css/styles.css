@@ -1,0 +1,235 @@
+/* CSS Variables for Consistent Color Scheme */
+:root {
+    --primary-color: #00adb5;         /* Bright Teal */
+    --secondary-color: #393e46;       /* Charcoal Gray */
+    --secondary-hover: #222831;       /* Dark Charcoal */
+    --tertiary-color: #ffffff;        /* White */
+    --tertiary-hover: #f1f1f1;        /* Light Gray Hover */
+    --background-color: #000000;      /* Black */
+    --text-color: #ffffff;            /* White */
+    --heading-color: #00adb5;         /* Bright Teal */
+    --button-text-color: #000000;     /* Black */
+    --button-bg: #ffffff;             /* White */
+    --button-hover-bg: #00adb5;       /* Teal Hover */
+    --border-color: #555555;          /* Medium Dark Gray */
+    --input-bg: #222831;              /* Dark Charcoal for Inputs */
+    --input-text-color: #ffffff;      /* White for Input Text */
+    --input-border-color: #555555;    /* Gray for Input Borders */
+    --input-focus-border-color: #00adb5; /* Teal on Focus */
+    --font-family: 'Roboto', sans-serif;
+}
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    color: var(--heading-color);
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--button-bg);
+    color: var(--button-text-color);
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-text-color);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-hover);
+}
+
+.birthday-cake {
+    width: 150px;
+    height: auto;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+input[type="password"],
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: var(--input-bg);
+    color: var(--input-text-color);
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+input[type="password"]:focus,
+input[type="text"]:focus,
+textarea:focus {
+    border-color: var(--input-focus-border-color);
+    outline: none;
+    background-color: #2a2a2a; /* Slightly lighter on focus */
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.alert {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.alert-success {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.alert-error {
+    background-color: #ff5252;
+    color: var(--text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 15px;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .birthday-cake {
+        width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .birthday-cake {
+        width: 100px;
+    }
+}
+
+/* Styles for the team picture */
+img[alt="Team picture"] {
+    display: block;
+    margin: 20px auto; /* Center the image */
+    max-width: 100%; /* Make it responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px; /* Rounded corners */
+    border: 2px solid var(--tertiary-color); /* Thin white border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: Add shadow for depth */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    img[alt="Team picture"] {
+        border-radius: 12px; /* Slightly reduce the corner radius on smaller screens */
+        border: 1px solid var(--tertiary-color); /* Thinner border for small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    img[alt="Team picture"] {
+        border-radius: 10px; /* Further reduce corner radius on very small screens */
+        border: 1px solid var(--tertiary-color); /* Keep border thin */
+    }
+}
